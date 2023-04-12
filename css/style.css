@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.content{
+min-height: 100vh;
+background-color: #eee;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.box{
+    background-color: inherit;
+    box-shadow: inset 0 0 7px rgba(0,0,0,.2);
+    padding: 40px 20px;
+    min-height: 350px;
+    width: 320px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.box h1{
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.box textarea{
+    width: 100%;
+    height: 100px;
+    color: #777;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    box-shadow: inherit;
+    border-radius: inherit;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.box .select{
+    width: 100%;
+    box-shadow: inherit;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.box .select select{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #777;
+    background-color: transparent;
+    font-weight: bold;
+    appearance: none;
+}
+
+.box .select::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-3.5px);
+    border: 7px solid transparent;
+    border-top-color:#777 ;
+    right: 10px;
+    pointer-events: none;
+}
+
+.box .button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inherit;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+}
+
+.box .button::after,
+.box .button::before{
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius:50% ;
+pointer-events: none;
+border: 1px solid #ff708f;
+opacity: 0;
+}
+
+.button.active::after,
+.button.active::before
+{
+    animation: played 2s ease-in-out infinite;
+}
+
+.button.active::before{
+    animation-delay: .2s;
+}
+
+@keyframes played {
+    0%,50%,100%{
+        width: 60px;
+        height: 60px;
+        opacity: .5;
+    }
+    25%,75%{
+        width: 50px;
+        height: 50px;
+        opacity: .2;
+    }
+}
